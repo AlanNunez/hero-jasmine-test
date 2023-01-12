@@ -1,15 +1,18 @@
-import { HeroComponent } from './../hero/hero.component';
+import { HeroComponent } from './hero.component';
 import { ComponentFixture, TestBed } from "@angular/core/testing"
-import { HeroService } from '../hero.service';
 import { By } from '@angular/platform-browser';
 
 describe('Shallow test', () => {
   let fixture: ComponentFixture<HeroComponent>;
-
+  let HEROES;
   beforeEach(() => {
+    HEROES = [
+      {id: 1, name: 'SpiderDude', strength: 8 },
+      {id: 2, name: 'Wonderful woman', strength: 8 },
+      {id: 3, name: 'SuperDude', strength: 8 },
+    ]
       TestBed.configureTestingModule({
         declarations:[HeroComponent],
-        providers:[HeroService]
       })
 
       fixture = TestBed.createComponent(HeroComponent);
@@ -26,4 +29,5 @@ describe('Shallow test', () => {
     let debugElement = fixture.debugElement.query(By.css('a'));
     expect(debugElement.nativeElement.textContent).toContain('SuperDude');
  })
+
 })
