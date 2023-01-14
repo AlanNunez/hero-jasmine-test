@@ -5,8 +5,21 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { of } from "rxjs";
 import { HeroesComponent } from "./heroes.component";
 import { By } from '@angular/platform-browser';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Directive, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 
+
+@Directive({
+  selector: '[routerLink]',
+  host: { '(click)': 'onClick()'}
+})
+export class RouterLinkDirectiveStub {
+  @Input('routerLink') linkParams: any;
+  navigatedTo: any = null;
+
+  onClick() {
+    this.navigatedTo = this.linkParams;
+  }
+}
 describe("HeroesComponent", () => {
   let component: ComponentFixture<HeroesComponent>;
   let HEROES;

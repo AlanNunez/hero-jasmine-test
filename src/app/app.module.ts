@@ -18,6 +18,7 @@ import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
 import { StrengthPipe } from './strength/strength.pipe';
 import { HeroComponent } from './hero/hero.component';
+import { RouterLinkDirectiveStub } from './heroes/heroes.component.spec';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { HeroComponent } from './hero/hero.component';
     MessagesComponent,
     HeroSearchComponent,
     StrengthPipe,
-    HeroComponent
+    HeroComponent,
+    RouterLinkDirectiveStub
   ],
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]
