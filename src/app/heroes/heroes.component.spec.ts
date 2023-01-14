@@ -88,6 +88,5 @@ describe("HeroesComponent", () => {
 
     const heroText = component.debugElement.query(By.css('ul')).nativeElement.textContent;
     expect(heroText).toContain("Mr Jackson");
-    console.log("heroText", heroText)
    });
 })
